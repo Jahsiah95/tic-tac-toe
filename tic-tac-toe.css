@@ -1,0 +1,17 @@
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+#gameBoard{
+    width: 50%;
+    height: 50%;
+    background-color: blueviolet;
+    border: solid white;
+}
