@@ -37,7 +37,7 @@ reset.addEventListener('click', resetGame)
 
 function addSymbol(e){
     if(e.target.textContent !== ''){
-        alert('Oops! This cell appears to be taken.');
+        // Do nothing
 
     }else if(turns%2 == 0){
         e.target.textContent = P1;
@@ -49,53 +49,52 @@ function addSymbol(e){
         movesO.push(Number(e.target.getAttribute('id')));
         filterO();
     }
-}
+};
 
 function filterX(){
     turns++
+
+    for(let i = 0; i < winningCombos.length; i++){
+
+        let combosX = movesX.filter(cellNumber => winningCombos[i].includes(cellNumber))
+
+        if(combosX.sort().join("") === winningCombos[i].join("")){
+            alert("Game Over")
+            scoreX++
+            X.textContent = `X: ${scoreX}`;
+            clearBoard();
+        }
+    };
 
     if(turns == 9){
         alert("It's a tie")
         tied++
         D.textContent = `D: ${tied}`;
         clearBoard();
-
-    } else{
-        for(let i = 0; i < winningCombos.length; i++){
-
-            let combosX = movesX.filter(cellNumber => winningCombos[i].includes(cellNumber))
-    
-            if(combosX.sort().join("") === winningCombos[i].join("")){
-                alert("Game Over")
-                scoreX++
-                X.textContent = `X: ${scoreX}`;
-                clearBoard();
-            }
-        };
     }
 };
 
 function filterO(){
     turns++
 
+    for(let i = 0; i < winningCombos.length; i++){
+
+        let combosO = movesO.filter(cellNumber => winningCombos[i].includes(cellNumber))
+
+        if(combosO.sort().join("") === winningCombos[i].join("")){
+            alert("Game Over")
+            scoreO++
+            O.textContent = `O: ${scoreO}`
+            clearBoard();
+        }
+    };
+    
     if(turns == 9){
         alert("It's a tie!")
         tied++
         D.textContent = `D: ${tied}`;
         clearBoard();
 
-    } else{
-        for(let i = 0; i < winningCombos.length; i++){
-
-            let combosO = movesO.filter(cellNumber => winningCombos[i].includes(cellNumber))
-    
-            if(combosO.sort().join("") === winningCombos[i].join("")){
-                alert("Game Over")
-                scoreO++
-                O.textContent = `O: ${scoreO}`
-                clearBoard();
-            }
-        };
     }
 };
 
@@ -104,11 +103,11 @@ function clearBoard(){
     movesX = [];
     movesO = [];
     turns = 0;
-}
+};
 
 function resetGame(){
     location.reload()
-}
+};
 
 
 
