@@ -10,7 +10,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1vw
+    gap: 5vw
 
 }
 
@@ -34,14 +34,15 @@ body{
 .cell{
     width: 16vh;
     height: 16vh;
-    background-color: blueviolet;
+    background-color: coral;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     font-size: 10vh;   
     font-weight: bold;
-    cursor: default;
+    cursor: pointer;
+    border-radius: 100%;
 }
 
 .dashboard{
@@ -50,12 +51,23 @@ body{
     width: 50vh;
     font-size: 5vh;
     font-weight: bolder;
-    color: blueviolet;
+    background-color: coral;
+    color: white;
+    padding: 2vw;
+    border-radius: 1vw;
+    cursor: default;
 }
 
 .dashboard > *{
     height: 5vh;
-    width: 100%;
-    /* background: lightgray; */
+    width: 100%;    
 }
 
+#reset{
+    background-color: white;
+    border-radius: 1vw;
+    font-size: large;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: none;
+}

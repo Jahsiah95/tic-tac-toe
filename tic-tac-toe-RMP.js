@@ -1,7 +1,4 @@
-//Select DOM elements (cells, buttons)
-//Logic for switching between 'x' and 'o'/player 1 and 2
-//Logic for ending game
-//Render selections
+
 
 let movesX = [];
 let movesO = [];
