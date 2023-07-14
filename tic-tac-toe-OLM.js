@@ -57,8 +57,6 @@
                 this.movesO.push(Number(e.target.getAttribute('id')));
                 this.filterO();
             }
-
-            console.log(this.turns)
         },
 
         filterX: function(){
